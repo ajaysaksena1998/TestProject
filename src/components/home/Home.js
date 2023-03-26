@@ -10,12 +10,12 @@ import {
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import Navbar from "../Navbar";
-import ProductCard from "../ProductCardDisplay";
-import Tab from "../FunctionTab";
+import ProductCard from "../CardOfProduct";
+import Tab from "../FunctionParams";
 import AddIcon from "@mui/icons-material/Add";
-import useAdmin from "../../AuthUser/User";
+import useAdmin from "../../UserAuthentication/UserAuth";
 import { setProducts } from "../../redux/actions";
-import getProducts from "../../functions/getProducts";
+import getProducts from "../../Utilities/getProducts";
 import { useHistory } from "react-router-dom";
 function Home({ user, products, filteredProducts, setProducts }) {
   const [filter, setFilter] = useState("default");

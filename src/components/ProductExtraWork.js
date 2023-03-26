@@ -4,10 +4,10 @@ import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
 import Navbar from "./Navbar";
 import { setCategories, setProducts } from "../redux/actions";
-import addProduct from "../functions/addProduct";
-import getCategories from "../functions/getCategories";
-import getProducts from "../functions/getProducts";
-import modifyProduct from "../functions/modifyProduct";
+import addProduct from "../Utilities/addProduct";
+import getCategories from "../Utilities/getCategories";
+import getProducts from "../Utilities/getProducts";
+import modifyProduct from "../Utilities/modifyProduct";
 
 function ModifyProduct({ user, setProducts, setCategories }) {
   const [name, setName] = useState("");

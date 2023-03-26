@@ -3,8 +3,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Project Members - 
-## 1. Ajay Saksena - aseduup@gmail.com
-## 2. Pranita Davankar - pr.davankar@gmail.com
+## 1. Vidushi Kothari - kothari.vidushi@gmail.com
+## 2. Svn venkatesh Adithya - venkateshadithya34@gmail.com
 
 ## Available Scripts
 

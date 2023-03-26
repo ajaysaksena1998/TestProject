@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Auth from "./components/Authentication";
+import Auth from "./components/AuthenticationFile";
 import { connect } from "react-redux";
 import {
   setAddresses,
@@ -10,16 +10,16 @@ import {
   setUser,
 } from "./redux/actions";
 import Home from "./components/home/Home";
-import GetUsers from "./functions/getUser";
-import DecodeToken from "./functions/decode_token";
-import NewProduct from "./components/ProductUpdate";
-import getCategories from "./functions/getCategories";
-import getProducts from "./functions/getProducts";
+import GetUsers from "./Utilities/getUser";
+import DecodeToken from "./Utilities/decode_token";
+import NewProduct from "./components/ProductExtraWork";
+import getCategories from "./Utilities/getCategories";
+import getProducts from "./Utilities/getProducts";
 import Logout from "./components/Logout";
-import ModifyProduct from "./components/ProductModify";
-import Product from "./components/Product";
-import PlaceOrder from "./components/PlaceOrder";
-import getAddress from "./functions/getAddresses";
+import ModifyProduct from "./components/ProductChange";
+import Product from "./components/ProductsCreate";
+import PlaceOrder from "./components/OrderPlacement";
+import getAddress from "./Utilities/getAddresses";
 import axios from "axios";
 
 function App({ setUser, setCategories, setProducts, setAddresses }) {

@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
 import Navbar from "./Navbar";
 import { setCart } from "../redux/actions";
-import getProduct from "../functions/getProduct";
+import getProduct from "../Utilities/getProduct";
 function Product({ product_id, setCart }) {
   const [product, setProduct] = useState(false);
   const [count, setCount] = useState(0);

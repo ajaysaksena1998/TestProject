@@ -8,8 +8,8 @@ import Typography from "@mui/material/Typography";
 import InputBase from "@mui/material/InputBase";
 import SearchIcon from "@mui/icons-material/Search";
 import { ShoppingCart } from "@material-ui/icons";
-import useAdmin from "../AuthUser/User";
-import useAuth from "../AuthUser/Auth";
+import useAdmin from "../UserAuthentication/UserAuth";
+import useAuth from "../UserAuthentication/Authentication";
 import { connect, useSelector } from "react-redux";
 import { setFilteredProducts } from "../redux/actions";
 

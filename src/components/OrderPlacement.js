@@ -3,12 +3,12 @@ import React, { useState } from "react";
 import { connect, useSelector } from "react-redux";
 import Select from "react-select";
 import Navbar from "./Navbar";
-import HorizontalStepper from "./Step";
+import HorizontalStepper from "./StepUp";
 import { addAddress, setOrder } from "../redux/actions";
-import sendAddress from "../functions/addAddress";
+import sendAddress from "../Utilities/addAddress";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import sendOrder from "../functions/addOrder";
+import sendOrder from "../Utilities/addOrder";
 import { useHistory } from "react-router-dom";
 
 function PlaceOrder({ addAddress, setOrder }) {

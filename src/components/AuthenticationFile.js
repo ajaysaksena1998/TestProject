@@ -2,11 +2,11 @@ import { Button, Snackbar, TextField } from "@mui/material";
 import React, { useState } from "react";
 import Navbar from "./Navbar";
 import LockIcon from "@mui/icons-material/Lock";
-import EmailValidator from "../functions/emailValidator";
-import PhoneValidator from "../functions/phoneValidator";
-import CreateUser from "../functions/signup";
+import EmailValidator from "../Utilities/emailValidator";
+import PhoneValidator from "../Utilities/phoneValidator";
+import CreateUser from "../Utilities/signup";
 import { Link, useHistory } from "react-router-dom";
-import AuthenticateUser from "../functions/login";
+import AuthenticateUser from "../Utilities/login";
 import Cookies from "js-cookies";
 
 function Auth({ type }) {
