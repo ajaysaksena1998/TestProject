@@ -2,6 +2,10 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Project Members - 
+## 1. Ajay Saksena - aseduup@gmail.com
+## 2. Pranita Davankar - pr.davankar@gmail.com
+
 ## Available Scripts
 
 In the project directory, you can run:
