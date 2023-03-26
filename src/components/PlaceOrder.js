@@ -2,13 +2,13 @@ import { Button, TextField } from "@mui/material";
 import React, { useState } from "react";
 import { connect, useSelector } from "react-redux";
 import Select from "react-select";
-import Navbar from "../components/Navbar";
-import HorizontalStepper from "../components/Stepper";
+import Navbar from "./Navbar";
+import HorizontalStepper from "./Step";
 import { addAddress, setOrder } from "../redux/actions";
-import sendAddress from "../utils/addAddress";
+import sendAddress from "../functions/addAddress";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import sendOrder from "../utils/addOrder";
+import sendOrder from "../functions/addOrder";
 import { useHistory } from "react-router-dom";
 
 function PlaceOrder({ addAddress, setOrder }) {

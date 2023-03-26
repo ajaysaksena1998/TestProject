@@ -1,15 +1,16 @@
 import { Alert, Button, Snackbar, TextField } from "@mui/material";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
-import Navbar from "../components/Navbar";
+import Navbar from "./Navbar";
 import { setCategories, setProducts } from "../redux/actions";
-import addProduct from "../utils/addProduct";
-import getCategories from "../utils/getCategories";
-import getProducts from "../utils/getProducts";
-import modifyProduct from "../utils/modifyProduct";
+import getCategories from "../functions/getCategories";
+import getProduct from "../functions/getProduct";
+import getProducts from "../functions/getProducts";
+import modifyProduct from "../functions/modifyProduct";
 
-function ModifyProduct({ user, setProducts, setCategories }) {
+function ModifyProduct({ product_id, user, setProducts, setCategories }) {
+  console.log("Product Id", product_id);
   const [name, setName] = useState("");
   const [category, setCategory] = useState("");
   const [manufacture, setManufacture] = useState("");
@@ -26,6 +27,22 @@ function ModifyProduct({ user, setProducts, setCategories }) {
   });
   const { vertical, horizontal, open } = state;
 
+  useEffect(() => {
+    async function fetchProduct() {
+      const pr = await getProduct(product_id);
+      console.log(pr);
+      setName(pr.name);
+
+      setCategory(pr.category);
+      setManufacture(pr.manufacturer);
+      setItemCount(pr.availableItems);
+      setImage(pr.imageUrl);
+      setDescription(pr.description);
+      setPrice(pr.price);
+    }
+    fetchProduct();
+  }, [product_id]);
+
   async function fetchProducts() {
     const productsList = await getProducts();
     console.log(productsList);
@@ -40,8 +57,8 @@ function ModifyProduct({ user, setProducts, setCategories }) {
 
   // handleModify
 
-  const handleAdd = async () => {
-    const added = await addProduct({
+  const handleModify = async () => {
+    const modified = await modifyProduct(product_id, {
       name: name,
       price: price,
       image: image,
@@ -51,18 +68,17 @@ function ModifyProduct({ user, setProducts, setCategories }) {
       availableItems: itemCount,
     });
 
-    setChange(false);
     const NewState = {
       vertical: "top",
       horizontal: "right",
     };
 
-    if (added === 201) {
+    if (modified === 200) {
       setState({ open: true, ...NewState });
       fetchProducts();
       fetchCategories();
       setTimeout(() => {
-        history.push("/");
+        history.replace("/");
       }, 2000);
     }
   };
@@ -80,13 +96,13 @@ function ModifyProduct({ user, setProducts, setCategories }) {
         anchorOrigin={{ vertical, horizontal }}
       >
         <Alert onClose={handleClose} severity="success" sx={{ width: "100%" }}>
-          Product {name} added Successfully!
+          Product {name} modified Successfully!
         </Alert>
       </Snackbar>
       <div className="auth-body w-full h-[90%] flex items-center justify-center py-16">
         <div className="flex flex-col items-center gap-12">
           <div className="flex flex-col items-center gap-3">
-            <h3 className="text-2xl">Add Product</h3>
+            <h3 className="text-2xl">Modify Product</h3>
           </div>
 
           <form className="flex flex-col items-start gap-3 w-[375px] lg:w-[575px]">
@@ -178,7 +194,7 @@ function ModifyProduct({ user, setProducts, setCategories }) {
               <Button
                 variant="contained"
                 fullWidth
-                onClick={handleAdd}
+                onClick={handleModify}
                 color={
                   !name ||
                   !description ||
@@ -204,7 +220,7 @@ function ModifyProduct({ user, setProducts, setCategories }) {
                     : false
                 }
               >
-                Add Product
+                Modify Product
               </Button>
             </div>
           </form>

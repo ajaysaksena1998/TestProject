@@ -8,8 +8,8 @@ import Typography from "@mui/material/Typography";
 import InputBase from "@mui/material/InputBase";
 import SearchIcon from "@mui/icons-material/Search";
 import { ShoppingCart } from "@material-ui/icons";
-import useAdmin from "../hooks/useAdmin";
-import useAuth from "../hooks/useAuth";
+import useAdmin from "../AuthUser/User";
+import useAuth from "../AuthUser/Auth";
 import { connect, useSelector } from "react-redux";
 import { setFilteredProducts } from "../redux/actions";
 
@@ -98,7 +98,7 @@ function Navbar({ user, setFilteredProducts }) {
               </Typography>
             </div>
 
-            <Search>
+            {auth&&<Search>
               <SearchIconWrapper>
                 <SearchIcon />
               </SearchIconWrapper>
@@ -108,7 +108,7 @@ function Navbar({ user, setFilteredProducts }) {
                 onChange={handleSearch}
               />
             </Search>
-
+            }
             {!auth && (
               <div className="flex items-center gap-3">
                 <a href="/auth/login">Login</a>

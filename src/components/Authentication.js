@@ -1,12 +1,12 @@
 import { Button, Snackbar, TextField } from "@mui/material";
 import React, { useState } from "react";
-import Navbar from "../components/Navbar";
+import Navbar from "./Navbar";
 import LockIcon from "@mui/icons-material/Lock";
-import EmailValidator from "../utils/emailValidator";
-import PhoneValidator from "../utils/phoneValidator";
-import CreateUser from "../utils/signup";
-import { useHistory } from "react-router-dom";
-import AuthenticateUser from "../utils/login";
+import EmailValidator from "../functions/emailValidator";
+import PhoneValidator from "../functions/phoneValidator";
+import CreateUser from "../functions/signup";
+import { Link, useHistory } from "react-router-dom";
+import AuthenticateUser from "../functions/login";
 import Cookies from "js-cookies";
 
 function Auth({ type }) {
@@ -133,6 +133,7 @@ function Auth({ type }) {
                 >
                   Log In
                 </Button>
+                <Link className = "mt-3 text-blue-500" to="/auth/signup">Not have an account? Sign Up</Link>
               </div>
             </form>
           ) : (
@@ -221,6 +222,7 @@ function Auth({ type }) {
                 >
                   Admin Sign Up
                 </Button>
+                <Link className = "mt-3 text-blue-500" to="/auth/login">Already have an account? Sign In</Link>
               </div>
             </form>
           )}

@@ -5,11 +5,11 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import { Button } from "@mui/material";
 import { DeleteForever, Edit } from "@material-ui/icons";
-import useAdmin from "../hooks/useAdmin";
-import PopUp from "./PopUp";
+import useAdmin from "../AuthUser/User";
+import PopUp from "./Popup";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
-import useAuth from "../hooks/useAuth";
+import useAuth from "../AuthUser/Auth";
 
 export default function ProductCard({ product, setAdminError }) {
   const admin = useAdmin();

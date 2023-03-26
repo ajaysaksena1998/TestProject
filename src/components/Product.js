@@ -3,9 +3,9 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
-import Navbar from "../components/Navbar";
+import Navbar from "./Navbar";
 import { setCart } from "../redux/actions";
-import getProduct from "../utils/getProduct";
+import getProduct from "../functions/getProduct";
 function Product({ product_id, setCart }) {
   const [product, setProduct] = useState(false);
   const [count, setCount] = useState(0);

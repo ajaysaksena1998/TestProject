@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Auth from "./Pages/Auth";
+import Auth from "./components/Authentication";
 import { connect } from "react-redux";
 import {
   setAddresses,
@@ -9,17 +9,17 @@ import {
   setProducts,
   setUser,
 } from "./redux/actions";
-import Home from "./Pages/Home";
-import GetUsers from "./utils/getUser";
-import DecodeToken from "./utils/decode_token";
-import NewProduct from "./Pages/NewProduct";
-import getCategories from "./utils/getCategories";
-import getProducts from "./utils/getProducts";
-import Logout from "./Pages/Logout";
-import ModifyProduct from "./Pages/ModifyProduct";
-import Product from "./Pages/Product";
-import PlaceOrder from "./Pages/PlaceOrder";
-import getAddress from "./utils/getAddresses";
+import Home from "./components/home/Home";
+import GetUsers from "./functions/getUser";
+import DecodeToken from "./functions/decode_token";
+import NewProduct from "./components/ProductUpdate";
+import getCategories from "./functions/getCategories";
+import getProducts from "./functions/getProducts";
+import Logout from "./components/Logout";
+import ModifyProduct from "./components/ProductModify";
+import Product from "./components/Product";
+import PlaceOrder from "./components/PlaceOrder";
+import getAddress from "./functions/getAddresses";
 import axios from "axios";
 
 function App({ setUser, setCategories, setProducts, setAddresses }) {

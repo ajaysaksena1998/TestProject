@@ -9,13 +9,13 @@ import {
 } from "@mui/material";
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import Navbar from "../components/Navbar";
-import ProductCard from "../components/ProductCard";
-import Tab from "../components/Tab";
+import Navbar from "../Navbar";
+import ProductCard from "../ProductCardDisplay";
+import Tab from "../FunctionTab";
 import AddIcon from "@mui/icons-material/Add";
-import useAdmin from "../hooks/useAdmin";
-import { setProducts } from "../redux/actions";
-import getProducts from "../utils/getProducts";
+import useAdmin from "../../AuthUser/User";
+import { setProducts } from "../../redux/actions";
+import getProducts from "../../functions/getProducts";
 import { useHistory } from "react-router-dom";
 function Home({ user, products, filteredProducts, setProducts }) {
   const [filter, setFilter] = useState("default");

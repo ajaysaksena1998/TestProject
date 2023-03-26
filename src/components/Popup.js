@@ -3,8 +3,8 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
-import removeItem from "../utils/removeItem";
-import AlertSnackBar from "./Alert";
+import removeItem from "../functions/removeItem";
+import AlertSnackBar from "./AlertBox";
 import { connect } from "react-redux";
 import { removeFromProducts } from "../redux/actions";
 
